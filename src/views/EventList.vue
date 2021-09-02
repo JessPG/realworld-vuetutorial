@@ -8,6 +8,7 @@
 </template>
 
 <script>
+// BaseIcon is imported globally in main.js, so no needed to import here
 import EventCard from "../components/EventCard.vue";
 export default {
   components: {
