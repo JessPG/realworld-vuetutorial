@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <span class="icon-wrapper" v-html="svg"></span>
+  <div class="icon-wrapper">
+    <span class="icon" v-html="svg"></span>
     <slot></slot>
   </div>
 </template>
@@ -42,6 +42,7 @@ export default {
   margin-right: 6px;
 }
 .icon {
+  margin-right: 10px;
   stroke: currentColor;
   stroke-width: 2;
   stroke-linecap: round;
