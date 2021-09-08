@@ -1,9 +1,9 @@
 <template>
   <!-- vue always needs a root element -->
   <div>
-    <h1>Events Listing</h1>
+    <h1>Events for {{ user.user.name }}</h1>
     <EventCard
-      v-for="event in events"
+      v-for="event in event.events"
       :key="event.id"
       :event="event"
     ></EventCard>
@@ -47,9 +47,14 @@ export default {
       return parseInt(this.$route.query.page) || 1;
     },
     showNextPage() {
-      return this.eventsTotal > this.page * 3;
+      return this.event.eventsTotal > this.page * 3;
     },
-    ...mapState(["events", "eventsTotal"]),
+    // mapState references to the store variable or to the module
+    ...mapState(["event", "user"]),
+    // Or we can specify like this, and we can reference it directly in the template
+    // ...mapState({
+    //   event: (state) => state.event.event,
+    // }),
   },
 };
 </script>

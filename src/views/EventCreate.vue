@@ -71,7 +71,7 @@ export default {
   methods: {
     // Returns new event object
     createNewEventObject() {
-      const user = this.$store.state.user;
+      const user = this.$store.state.user.user;
       const id = Math.floor(Math.random() * 1000000);
 
       return {
